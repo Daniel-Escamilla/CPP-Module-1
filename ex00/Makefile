@@ -1,7 +1,10 @@
 CC       = g++
 CFLAGS   = -Wall -Wextra -Werror -std=c++98
 
-SRC      = main.cpp \
+SRC      =	main.cpp \
+			Zombie.cpp \
+			newZombie.cpp \
+			randomChump.cpp \
 
 OBJ_DIR  = Zombie_objects
 OBJ      = $(addprefix $(OBJ_DIR)/, $(notdir $(SRC:.cpp=.o)))
