@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   zombie.hpp                                         :+:      :+:    :+:   */
+/*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: daniel-escamilla <daniel-escamilla@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/17 11:16:30 by daniel-esca       #+#    #+#             */
-/*   Updated: 2025/04/17 11:16:31 by daniel-esca      ###   ########.fr       */
+/*   Created: 2025/04/17 11:16:02 by daniel-esca       #+#    #+#             */
+/*   Updated: 2025/04/17 20:35:57 by daniel-esca      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef zombie_HPP
-# define zombie_HPP
+#include "Zombie.hpp"
 
-// contenido de zombie.hpp
+std::string intToStr(int n)
+{
+	std::ostringstream str;
+	str << n;
+	return (str.str());
+}
 
-#endif
+Zombie	*zombieHorde(int n, std::string name)
+{
+	for (; n > 0; n--)
+	{
+		newZombie(name);
+	}
+}

@@ -2,9 +2,9 @@ NAME = horde
 CC = g++
 CFLAGS = -g3 -Wall -Wextra -Werror -std=c++98
 
-SRC =	src/main.cpp \
-		src/zombieHorde.cpp \
-		src/Zombie.cpp \
+SRC =	main.cpp \
+		Zombie.cpp \
+		zombieHorde.cpp \
 
 OBJS = $(SRC:.cpp=.o)
 OBJDIR = horde_objects
