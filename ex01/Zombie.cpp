@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniel-escamilla <daniel-escamilla@stud    +#+  +:+       +#+        */
+/*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:16:13 by daniel-esca       #+#    #+#             */
-/*   Updated: 2025/04/17 20:18:39 by daniel-esca      ###   ########.fr       */
+/*   Updated: 2025/04/18 19:29:20 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-Zombie::Zombie (std::string new_name)
+Zombie::Zombie ()
 {
-	name = new_name;
+	
 }
 
 Zombie::~Zombie()
@@ -22,10 +22,12 @@ Zombie::~Zombie()
 	std::cout << name << " " << "destroyed" << std::endl;
 }
 
-Zombie	*newZombie(std::string name)
+void	Zombie::SetName(std::string new_name)
 {
-	Zombie	*new_zombie;
+	name = new_name;
+}
 
-	new_zombie = new Zombie(name);
-	return (new_zombie);
+void	Zombie::announce(void)
+{
+	std::cout << name << ": BraiiiiiiinnnzzzZ..." << std::endl;
 }

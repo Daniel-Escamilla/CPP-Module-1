@@ -3,26 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   zombieHorde.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniel-escamilla <daniel-escamilla@stud    +#+  +:+       +#+        */
+/*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 11:16:02 by daniel-esca       #+#    #+#             */
-/*   Updated: 2025/04/17 20:35:57 by daniel-esca      ###   ########.fr       */
+/*   Updated: 2025/04/18 19:36:39 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Zombie.hpp"
 
-std::string intToStr(int n)
-{
-	std::ostringstream str;
-	str << n;
-	return (str.str());
-}
-
 Zombie	*zombieHorde(int n, std::string name)
 {
-	for (; n > 0; n--)
+	Zombie	*horde;
+
+	horde = new Zombie[n];
+	for (int i = 0; i < n; i++)
 	{
-		newZombie(name);
+		horde[i].SetName(name);
 	}
+	return (horde);
 }
