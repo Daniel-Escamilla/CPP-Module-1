@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Zombie.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daniel-escamilla <daniel-escamilla@stud    +#+  +:+       +#+        */
+/*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/17 17:02:08 by daniel-esca       #+#    #+#             */
-/*   Updated: 2025/04/17 17:11:58 by daniel-esca      ###   ########.fr       */
+/*   Updated: 2025/04/18 19:29:41 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@
 class Zombie
 {
 	public:
-		Zombie(std::string insert_name);
 		~Zombie();
 		void	announce(void);
+		Zombie(std::string insert_name);
 	private:
 		std::string name;
 };
