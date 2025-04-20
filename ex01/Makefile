@@ -14,7 +14,7 @@ all: $(OBJDIR) $(NAME)
 $(NAME): $(addprefix $(OBJDIR)/, $(OBJS))
 	$(CC) $(CFLAGS) -o $@ $(addprefix $(OBJDIR)/, $(OBJS))
 
-$(OBJDIR)/%.o: src/%.cpp | $(OBJDIR)
+$(OBJDIR)/%.o: %.cpp | $(OBJDIR)
 	$(CC) $(CFLAGS) -c $< -o $@
 
 $(OBJDIR):
