@@ -21,8 +21,9 @@ cat > $INCLUDE_DIR/include.hpp <<EOL
 #ifndef INCLUDE_HPP
 # define INCLUDE_HPP
 
-#include <iostream>
-#include "../$EXEC_NAME.hpp"
+# include <iostream>
+# include <string>
+# include "../$EXEC_NAME.hpp"
 
 #endif
 EOL
@@ -44,7 +45,7 @@ cat > $EXEC_NAME.hpp <<EOL
 #ifndef ${EXEC_NAME^^}_HPP
 # define ${EXEC_NAME^^}_HPP
 
-#include "$INCLUDE_DIR/include.hpp"
+# include "$INCLUDE_DIR/include.hpp"
 
 #endif
 EOL
@@ -52,7 +53,7 @@ EOL
 # generar archivos fuente mínimos
 for src in $FILES; do
   cat > $SRC_DIR/$src <<EOL
-#include "../$EXEC_NAME.hpp"
+#include "../include/$EXEC_NAME.hpp"
 
 EOL
 done
@@ -63,9 +64,6 @@ for src in $FILES; do
   SRC_LIST="$SRC_LIST    $SRC_DIR/$src \\
 "
 done
-# quitar la barra del último
-SRC_LIST="${SRC_LIST%\\
-}"
 
 # Makefile
 cat > Makefile <<EOL
@@ -76,7 +74,7 @@ CFLAGS = -g3 -Wall -Wextra -Werror -std=c++98
 SRC = \\
 $SRC_LIST
 
-OBJS = \$(SRC:.cpp=.o)
+OBJS = \$(notdir \$(SRC:.cpp=.o))
 OBJDIR = $OBJ_DIR
 
 all: \$(OBJDIR) \$(NAME)
