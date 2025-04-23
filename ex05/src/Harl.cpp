@@ -3,14 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   Harl.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daniel-escamilla <daniel-escamilla@stud    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/21 16:52:42 by descamil          #+#    #+#             */
-/*   Updated: 2025/04/21 17:33:51 by descamil         ###   ########.fr       */
+/*   Updated: 2025/04/23 13:18:40 by daniel-esca      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/harl.hpp"
+
+const std::string Harl::levels[4] = {
+	"DEBUG",
+	"INFO",
+	"WARNING",
+	"ERROR"
+};
+
+Harl::Pointer Harl::functions[4] = {
+	&Harl::debug,
+	&Harl::info,
+	&Harl::warning,	
+	&Harl::error
+};
 
 void	Harl::debug(void)
 {
