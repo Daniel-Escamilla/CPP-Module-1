@@ -6,7 +6,7 @@
 /*   By: descamil <descamil@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 20:06:21 by descamil          #+#    #+#             */
-/*   Updated: 2025/04/19 19:05:46 by descamil         ###   ########.fr       */
+/*   Updated: 2025/08/18 16:59:39 by descamil         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ HumanA::~HumanA(void)
 	
 }
 
-void		HumanA::attack()
+void HumanA::attack()
 {
 	std::cout << name << " attacks with their " << weapon.getType() << std::endl;
 }
